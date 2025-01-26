@@ -1,0 +1,17 @@
+#!/bin/sh
+
+NAME=phb_test
+RELEASE=12
+YEAR=25
+VERSION=0002
+
+[ -f boot/grub/grub.cfg ] || exit
+
+for FILE in 01-filesystem.squashfs initrd1.xz vmlinuz1
+do test -f live/${FILE} || exit
+done
+
+#sudo apt-get install -y grub-common grub-pc-bin grub-efi-amd64-bin mtools xorriso
+
+rm -f ${NAME}x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
+grub-mkrescue --locales= -volid ${NAME} -m live32* -o ${NAME}x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso ./
