@@ -5,6 +5,8 @@ RELEASE=12
 YEAR=25
 VERSION=0002
 
+EXCLUDE="-m System* -m boot/grub/i386-pc* -m boot/grub/x86_64-efi* -m boot.catalog -m efi.img -m mach_kernel"
+
 [ -f boot/grub/grub.cfg ] || exit
 
 for FILE in 01-filesystem.squashfs initrd1.xz vmlinuz1
@@ -14,4 +16,4 @@ done
 #sudo apt-get install -y grub-common grub-pc-bin grub-efi-amd64-bin mtools xorriso
 
 rm -f ${NAME}x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
-grub-mkrescue --locales= -volid ${NAME} -m live32* -o ${NAME}x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso -m System* -m boot/grub/i386-pc* -m boot/grub/x86_64-efi* -m boot.catalog -m efi.img -m mach_kernel ./
+grub-mkrescue --locales= -volid ${NAME} ${EXCLUDE} -m live32* -o ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso ./
