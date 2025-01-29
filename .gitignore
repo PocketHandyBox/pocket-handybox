@@ -1,0 +1,8 @@
+*.iso
+live/*
+boot/grub/i386-pc
+boot/grub/x86_64-efi
+boot.catalog
+System
+efi.img
+mach_kernel
