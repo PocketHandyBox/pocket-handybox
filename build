@@ -15,5 +15,5 @@ done
 
 #sudo apt-get install -y grub-common grub-pc-bin grub-efi-amd64-bin mtools xorriso
 
-rm -f ${NAME}x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
+rm -f ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
 grub-mkrescue --locales= -volid ${NAME} ${EXCLUDE} -m live32* -o ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso ./
