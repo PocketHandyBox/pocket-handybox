@@ -23,9 +23,9 @@ Additionally, a 64bit Linux 5.10 kernel is supplied. It must be selected if a le
 NVIDIA driver is required (390.x is also pre-built). This kernel uses the Broadcom WL
 WiFi driver for 802.11n adapters, which do not work with free drivers.
 
-Linux 5.10 kernel built with intel-nvme-remap patch from EndlessOS to make NVMe SSDs
-available on 6th-10th gen Intel Core i3/i5/i7 platforms with "Intel RST Premium With Optane"
-option enabled in UEFI Setup.
+Linux 5.10 kernel built with intel-nvme-remap patch from EndlessOS to get access to
+NVMe SSDs on 6th-10th gen Intel Core i3/i5/i7 platforms with "Intel RST Premium With
+Optane" option enabled in UEFI Setup.
 
 Download Releases
 https://github.com/PocketHandyBox/pocket-handybox/releases
