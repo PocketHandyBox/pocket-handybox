@@ -5,7 +5,8 @@ RELEASE=12
 YEAR=25
 VERSION=0002
 
-EXCLUDE="-m .git* -m LICENSE -m System* -m boot/grub/i386-pc* -m boot/grub/x86_64-efi* -m boot.catalog -m efi.img -m mach_kernel"
+EXCLUDE="-m .git -m .gitignore -m LICENSE"
+EXCLUDE="$EXCLUDE -m System* -m boot/grub/i386-pc* -m boot/grub/x86_64-efi* -m boot.catalog -m efi.img -m mach_kernel"
 
 [ -f boot/grub/grub.cfg ] || exit
 
