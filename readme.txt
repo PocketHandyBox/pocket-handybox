@@ -16,7 +16,7 @@ Contains three versions of NVIDIA proprietary GPU drivers - current 550.x,
 and legacy 390.x and 340.x. At boot time, the 'linuxrc' script automatically
 determines which driver squashfs module to load.
 
-The default launch option is 64bit Linux 6.10 kernel. NVIDIA 550.x and 390.x
+The default boot option is 64bit Linux 6.10 kernel. NVIDIA 550.x and 390.x
 driver modules are pre-built.
 
 Additionally, a 64bit Linux 5.10 kernel is supplied. It must be selected if a legacy 340.x
