@@ -1,27 +1,12 @@
-menuentry "$menuname changes=/phb" {
-	echo 'Loading ...'
-	linux /live/vmlinuz1 \
-	changes=/phb nvidia_detect noauto $nocd $from $extfw $mit $nvmedef
-	initrd /live/initrd1.xz
-}
-menuentry "$menuname Copy2RAM changes=EXIT:/phb" {
-	echo 'Loading ...'
-	linux /live/vmlinuz1 \
-	changes=EXIT:/phb copy2ram nvidia_detect noauto $nocd $from $extfw $mit $nvmedef
-	initrd /live/initrd1.xz
-}
+menuentry "$menuname changes=/phb" {phb noauto nvidia_detect changes=/phb}
+menuentry "$menuname Copy2RAM changes=EXIT:/phb" {phb noauto nvidia_detect copy2ram changes=EXIT:/phb}
 
 if [ -f /live/dk5/vmlinuz1 ]; then
-	menuentry "$menuname Old Kernel 5.10 changes=/phb" {
-		echo 'Loading ...'
-		linux /live/dk5/vmlinuz1 \
-		changes=/phb nvidia_detect noauto $nocd $from $extfw\;/live/dk5 noload=k-6.1 $mit $nvmedef
-		initrd /live/dk5/initrd1.xz
-	}
-	menuentry "$menuname Old Kernel 5.10 Copy2RAM changes=EXIT:/phb" {
-		echo 'Loading ...'
-		linux /live/dk5/vmlinuz1 \
-		changes=EXIT:/phb copy2ram nvidia_detect noauto $nocd $from $extfw\;/live/dk5 noload=k-6.1 $mit $nvmedef
-		initrd /live/dk5/initrd1.xz
-	}
+menuentry "$menuname5 changes=/phb" {phb5 noauto nvidia_detect changes=/phb}
+menuentry "$menuname5 Copy2RAM changes=EXIT:/phb" {phb5 noauto nvidia_detect copy2ram changes=EXIT:/phb}
+fi
+
+if [ -f /live32/live/vmlinuz1 ]; then
+menuentry "$menuname32 changes=/phb32" {phb32 noauto changes=/phb32}
+menuentry "$menuname32 Copy2RAM changes=EXIT:/phb32" {phb32 noauto copy2ram changes=EXIT:/phb32}
 fi
