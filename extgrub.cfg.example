@@ -5,14 +5,14 @@ menuentry "$menuname Copy2RAM changes=EXIT:/phb/changes.dat" {phb noauto nvidia_
 
 if [ -f /live/dk5/vmlinuz1 ]; then
 menuentry "$menuname5 changes=/phb" {phb5 noauto nvidia_detect changes=/phb}
-menuentry "$menuname5 changes=/phb" {phb5 noauto nvidia_detect changes=/phb/changes.dat}
+menuentry "$menuname5 changes=/phb/changes.dat" {phb5 noauto nvidia_detect changes=/phb/changes.dat}
 menuentry "$menuname5 Copy2RAM changes=EXIT:/phb" {phb5 noauto nvidia_detect copy2ram changes=EXIT:/phb}
-menuentry "$menuname5 Copy2RAM changes=EXIT:/phb" {phb5 noauto nvidia_detect copy2ram changes=EXIT:/phb/changes.dat}
+menuentry "$menuname5 Copy2RAM changes=EXIT:/phb/changes.dat" {phb5 noauto nvidia_detect copy2ram changes=EXIT:/phb/changes.dat}
 fi
 
 if [ -f /live32/live/vmlinuz1 ]; then
 menuentry "$menuname32 changes=/phb32" {phb32 noauto changes=/phb32}
-menuentry "$menuname32 changes=/phb32" {phb32 noauto changes=/phb/changes32.dat}
+menuentry "$menuname32 changes=/phb/changes32.dat" {phb32 noauto changes=/phb/changes32.dat}
 menuentry "$menuname32 Copy2RAM changes=EXIT:/phb32" {phb32 noauto copy2ram changes=EXIT:/phb32}
-menuentry "$menuname32 Copy2RAM changes=EXIT:/phb32" {phb32 noauto copy2ram changes=EXIT:/phb/changes32.dat}
+menuentry "$menuname32 Copy2RAM changes=EXIT:/phb/changes32.dat" {phb32 noauto copy2ram changes=EXIT:/phb/changes32.dat}
 fi
