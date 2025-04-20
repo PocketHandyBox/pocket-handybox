@@ -3,7 +3,7 @@
 NAME=phb_test
 RELEASE=12
 YEAR=25
-VERSION=0005
+VERSION=0006
 
 EXCLUDE="-m .git -m .gitignore -m LICENSE"
 EXCLUDE="$EXCLUDE -m System -m boot/grub/i386-pc -m boot/grub/x86_64-efi -m boot.catalog -m efi.img -m mach_kernel"
@@ -17,4 +17,6 @@ done
 #sudo apt-get install -y grub-common grub-pc-bin grub-efi-amd64-bin mtools xorriso
 
 rm -f ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
+rm -f ${NAME}_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
 grub-mkrescue --locales= -volid ${NAME} -m '*.iso' ${EXCLUDE} -m live32 -o ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso ./
+[ -d live32 ] && grub-mkrescue --locales= -volid ${NAME} -m '*.iso' ${EXCLUDE} -o ${NAME}_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso ./

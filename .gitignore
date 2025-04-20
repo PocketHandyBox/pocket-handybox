@@ -1,5 +1,6 @@
 *.iso
 live/*
+live32/*
 boot/grub/i386-pc
 boot/grub/x86_64-efi
 boot.catalog
