@@ -7,3 +7,4 @@ boot.catalog
 System
 efi.img
 mach_kernel
+md5sum.txt

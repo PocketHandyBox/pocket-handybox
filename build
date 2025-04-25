@@ -16,6 +16,8 @@ done
 
 #sudo apt-get install -y grub-common grub-pc-bin grub-efi-amd64-bin mtools xorriso
 
+find live* -type f | sort | xargs md5sum > md5sum.txt
+
 rm -f ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
 rm -f ${NAME}_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso
 grub-mkrescue --locales= -volid ${NAME} -m '*.iso' ${EXCLUDE} -m live32 -o ${NAME}_x64_${RELEASE}_${YEAR}_${VERSION}_vtgrub2.iso ./
