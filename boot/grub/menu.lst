@@ -1,0 +1,45 @@
+# menu.lst config for boot iso file from grub4dos
+# main bootloader grub2 not use it (use grub.cfg instead)
+
+## Copy (and remove # from) next 7 lines
+
+#title PHB Linux
+#set ISO=pocket-handybox_12_25_0006_vtgrub2.iso
+#find --set-root --ignore-floppies --ignore-cd /%ISO%
+#map /%ISO% (0xff)
+#map --hook
+#root (0xff)
+#configfile /boot/grub/menu.lst
+
+## To main menu.lst config for grub4dos
+
+timeout 30
+default 1
+
+#set langm=lang=ru
+set mit=mitigations=off
+set nvmedef=nvme_core.default_ps_max_latency_us=5500
+
+title PHB 64bit Linux
+kernel /live/vmlinuz1 nocd noauto nvidia=detect from=/%ISO% %langm% %mit% %nvmedef%
+initrd /live/initrd1.xz
+
+title PHB 64bit Copy2RAM
+kernel /live/vmlinuz1 nocd noauto nvidia=detect copy2ram from=/%ISO% %langm% %mit% %nvmedef%
+initrd /live/initrd1.xz
+
+title PHB 64bit Kernel 5.10
+kernel /live/k510/vmlinuz1 nocd noauto nvidia=detect from=/%ISO% %langm% %mit% %nvmedef%
+initrd /live/k510/initrd1.xz
+
+title PHB64 K510 Copy2RAM
+kernel /live/k510/vmlinuz1 nocd noauto nvidia=detect copy2ram from=/%ISO% %langm% %mit% %nvmedef%
+initrd /live/k510/initrd1.xz
+
+title PHB 32bit Linux
+kernel /live32/vmlinuz1 nocd noauto from=/%ISO% %langm% %mit%
+initrd /live32/initrd1.xz
+
+title PHB 32bit Copy2RAM
+kernel /live32/vmlinuz1 nocd noauto copy2ram from=/%ISO% %langm% %mit%
+initrd /live32/initrd1.xz
