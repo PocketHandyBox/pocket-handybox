@@ -17,7 +17,7 @@ timeout 30
 default 1
 
 #set langm=lang=ru
-set mit=mitigations=off
+set mit=mitigations=off ibt=off
 set nvmedef=nvme_core.default_ps_max_latency_us=5500
 
 title PHB 64bit Linux
